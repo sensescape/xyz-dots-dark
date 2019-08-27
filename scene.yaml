@@ -850,29 +850,29 @@ layers:
                         color: [1.000,1.000,1.000]
                         visible: true
 
-    #     conservation:
-    #         filter:
-    #             $zoom: { min: 4 }
-    #             kind: [protected_area, nature_reserve, national_park]
-    #             not: { protect_class: ['2','3','5']}
-    #         draw:
-    #             polygons:
-    #                 style: conservation-dots-multi
-    #                 color: [1.000,1.000,1.000]
-    #                 visible: true
+        conservation:
+            filter:
+                $zoom: { min: 4 }
+                kind: [protected_area, nature_reserve, national_park]
+                not: { protect_class: ['2','3','5']}
+            draw:
+                polygons:
+                    style: conservation-dots-multi
+                    color: [1.000,1.000,1.000]
+                    visible: true
 
-    #     national_forest_level_6:
-    #         filter:
-    #             all:
-    #                 - kind: forest
-    #             any:
-    #                 - protect_class: ['6']
-    #                 - operator: ['United States Forest Service']
-    #         draw:
-    #             polygons:
-    #                 style: green-area-dots
-    #                 color: [1.000,1.000,1.000]
-    #                 visible: true
+        national_forest_level_6:
+            filter:
+                all:
+                    - kind: forest
+                any:
+                    - protect_class: ['6']
+                    - operator: ['United States Forest Service']
+            draw:
+                polygons:
+                    style: green-area-dots
+                    color: [1.000,1.000,1.000]
+                    visible: true
 
     #     forest-landcover:
     #         filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 10 }, not: { operator: "United States Forest Service" } }
@@ -1475,63 +1475,63 @@ layers:
                         font:
                             size: [[9, 10px], [14, 11px], [15, 0px]]
 
-    #     neighbourhoods:
-    #         filter:
-    #             all:
-    #                 - kind:
-    #                     - borough
-    #                     - macrohood
-    #                     - neighbourhood
-    #                     #- microhood       # until Tenderloin microhoods are cleaned up, ban this placetype
-    #                 - $zoom: { min: 10, max: 17 }
-    #                 - is_landuse_aoi: false
-    #                 - function() { return (feature.min_zoom <= ($zoom+0.5) && feature.max_zoom >= ($zoom+1)) }
-    #         draw:
-    #             text-blend-order:
-    #                 visible: true
-    #                 priority: 29
-    #                 buffer: 8px
-    #                 text_wrap: 10
-    #                 max_lines: 2
-    #                 font:
-    #                     fill: [0.550,0.550,0.550]
-    #                     size: [[11, 9px], [12, 10px], [13, 12px], [14, 16px], [16, 24px]]
-    #                     weight: normal
-    #                     transform: uppercase
-    #                     stroke: { color: [0.950,0.950,0.950], width: [[12, 4px], [13, 6px], [15, 8px]] }
+        neighbourhoods:
+            filter:
+                all:
+                    - kind:
+                        - borough
+                        - macrohood
+                        - neighbourhood
+                        #- microhood       # until Tenderloin microhoods are cleaned up, ban this placetype
+                    - $zoom: { min: 10, max: 17 }
+                    - is_landuse_aoi: false
+                    - function() { return (feature.min_zoom <= ($zoom+0.5) && feature.max_zoom >= ($zoom+1)) }
+            draw:
+                text-blend-order:
+                    visible: true
+                    priority: 29
+                    buffer: 8px
+                    text_wrap: 10
+                    max_lines: 2
+                    font:
+                        fill: [0.550,0.550,0.550]
+                        size: [[11, 9px], [12, 10px], [13, 12px], [14, 16px], [16, 24px]]
+                        weight: normal
+                        transform: uppercase
+                        stroke: { color: [0.160,0.160,0.160], width: [[12, 4px], [13, 6px], [15, 8px]] }
 
-    #         z13-up:
-    #             filter:
-    #                 $zoom: { min: 13 }
-    #             draw:
-    #                 text-blend-order:
-    #                     font:
-    #                         weight: 300
+            z13-up:
+                filter:
+                    $zoom: { min: 13 }
+                draw:
+                    text-blend-order:
+                        font:
+                            weight: 300
 
-    #             low_quality_kind_tile_rank:
-    #                 filter:
-    #                     kind_tile_rank: { min: 8 }
-    #                 draw:
-    #                     text-blend-order:
-    #                         visible: false
+                low_quality_kind_tile_rank:
+                    filter:
+                        kind_tile_rank: { min: 8 }
+                    draw:
+                        text-blend-order:
+                            visible: false
 
-    #             z14-up:
-    #                 filter:
-    #                     $zoom: { min: 14 }
-    #                 draw:
-    #                     text-blend-order:
-    #                         text_wrap: 9
-    #                         visible: true
+                z14-up:
+                    filter:
+                        $zoom: { min: 14 }
+                    draw:
+                        text-blend-order:
+                            text_wrap: 9
+                            visible: true
 
-    #                 z15-up:
-    #                     filter:
-    #                         $zoom: { min: 15 }
-    #                         min_zoom: { min: 15 }
-    #                     draw:
-    #                         text-blend-order:
-    #                             priority: 19
-    #                             font:
-    #                                 size: 13px
+                    z15-up:
+                        filter:
+                            $zoom: { min: 15 }
+                            min_zoom: { min: 15 }
+                        draw:
+                            text-blend-order:
+                                priority: 19
+                                font:
+                                    size: 13px
 
 styles:
     lines_transparent:
@@ -1551,6 +1551,7 @@ styles:
         mix: [polygons-dots]
         shaders:
             defines:
+                DOTS_BACKGROUND_COLOR: vec3(0.160,0.160,0.160)
                 DOTS_SIZE: 0.7
                 DOTS_TYPE: fill
                 DOTS_TILE_STYLE: tile
@@ -1573,23 +1574,24 @@ styles:
         mix: [polygons-dots]
         shaders:
             defines:
+                DOTS_BACKGROUND_COLOR: vec3(0.160,0.160,0.160)
                 DOTS_SIZE: 0.7
                 DOTS_TYPE: fill
                 DOTS_TILE_STYLE: tile
                 DOTS_SCALE: 18.0
-                DOTS_COLOR: vec3(0.235,0.235,0.235)
+                DOTS_COLOR: vec3(0.275,0.275,0.275)
 
     green-area-dots:
         base: polygons
         mix: [polygons-dots]
         shaders:
             defines:
-                DOTS_BACKGROUND_COLOR: vec3(0.925,0.925,0.925)
+                DOTS_BACKGROUND_COLOR: vec3(0.150,0.150,0.150)
                 DOTS_SIZE: 0.5
                 DOTS_TYPE: fill
                 DOTS_TILE_STYLE: tile
                 DOTS_SCALE: 18.0
-                DOTS_COLOR: vec3(0.865,0.865,0.865)
+                DOTS_COLOR: vec3(0.195,0.195,0.195)
 
     park-dots:
         base: polygons
@@ -1649,16 +1651,16 @@ styles:
                 DOTS_TILE_STYLE: tile
                 DOTS_SCALE: 18.0
                 DOTS_SIZE: 0.05
-                DOTS_COLOR: vec3(0.93)
+                DOTS_COLOR: vec3(0.090)
                 DOTS_SIZE2: 0.7
-                DOTS_COLOR2: vec3(0.865,0.865,0.865)
+                DOTS_COLOR2: vec3(0.205,0.205,0.205)
 
     park-dots-multi:
         base: polygons
         mix: [polygons-dots-multi]
         shaders:
             defines:
-                DOTS_BACKGROUND_COLOR: vec3(0.110,0.110,0.110)
+                DOTS_BACKGROUND_COLOR: vec3(0.150,0.150,0.150)
                 DOTS_TYPE: fill
                 DOTS_TILE_STYLE: tile
                 DOTS_SCALE: 18.0
@@ -1816,7 +1818,7 @@ styles:
         mix: [space-tile, tiling-brick, tiling-tile, shapes-circle]
         shaders:
             defines:
-                DOTS_BACKGROUND_COLOR: vec3(0.950)
+                DOTS_BACKGROUND_COLOR: vec3(0.150)
                 DOTS_COLOR: vec3(0.8, 0.8, 0.)
                 DOTS_COLOR2: vec3(0.5, 0., 0.)
                 DOTS_SIZE: 0.1

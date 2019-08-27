@@ -882,31 +882,31 @@ layers:
     #                 color: [1.000,1.000,1.000]
     #                 visible: true
 
-    #     parks-and-national-forests-not-national-park:
-    #         filter:
-    #             all:
-    #                 - $zoom: { min: 4 }
-    #                 - kind: [park, national_park]
-    #             any:
-    #                 - not: { operator: [ "United States National Park Service", "United States Forest Service" ] }
-    #                 - not: { protect_class: ['2','3','5','6'] }
-    #         # default for national forests and more?
-    #         draw:
-    #             polygons:
-    #                 style: park-dots
-    #                 color: [1.000,1.000,1.000]
-    #                 visible: true
-    #         national_park:
-    #             #filter: function() { return feature.name && (feature.name.indexOf('National Park') > -1); }
-    #             filter:
-    #                 all:
-    #                     - kind: national_park
-    #                     - not: [ protect_class: ['2','3','5','6'], operator: [ "United States National Park Service"] ]
-    #             draw:
-    #                 polygons:
-    #                     style: park-dots
-    #                     color: [1.000,1.000,1.000]
-    #                     visible: true
+        parks-and-national-forests-not-national-park:
+            filter:
+                all:
+                    - $zoom: { min: 4 }
+                    - kind: [park, national_park]
+                any:
+                    - not: { operator: [ "United States National Park Service", "United States Forest Service" ] }
+                    - not: { protect_class: ['2','3','5','6'] }
+            # default for national forests and more?
+            draw:
+                polygons:
+                    style: park-dots
+                    color: [1.000,1.000,1.000]
+                    visible: true
+            national_park:
+                #filter: function() { return feature.name && (feature.name.indexOf('National Park') > -1); }
+                filter:
+                    all:
+                        - kind: national_park
+                        - not: [ protect_class: ['2','3','5','6'], operator: [ "United States National Park Service"] ]
+                draw:
+                    polygons:
+                        style: park-dots
+                        color: [1.000,1.000,1.000]
+                        visible: true
 
     #     farm:
     #         filter:
@@ -1494,7 +1494,7 @@ layers:
                     text_wrap: 10
                     max_lines: 2
                     font:
-                        fill: [0.550,0.550,0.550]
+                        fill: [0.450,0.450,0.450]
                         size: [[11, 9px], [12, 10px], [13, 12px], [14, 16px], [16, 24px]]
                         weight: normal
                         transform: uppercase
@@ -1598,11 +1598,12 @@ styles:
         mix: [polygons-dots]
         shaders:
             defines:
+                DOTS_BACKGROUND_COLOR: vec3(0.140,0.140,0.140)
                 DOTS_SIZE: 0.8
                 DOTS_TYPE: fill
                 DOTS_TILE_STYLE: tile
                 DOTS_SCALE: 18.0
-                DOTS_COLOR: vec3(0.855,0.855,0.855)
+                DOTS_COLOR: vec3(0.195,0.195,0.195)
 
     farm-dots:
         base: polygons

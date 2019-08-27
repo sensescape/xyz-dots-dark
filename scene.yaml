@@ -874,13 +874,13 @@ layers:
                     color: [1.000,1.000,1.000]
                     visible: true
 
-    #     forest-landcover:
-    #         filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 10 }, not: { operator: "United States Forest Service" } }
-    #         draw:
-    #             polygons:
-    #                 style: forest-dots-multi
-    #                 color: [1.000,1.000,1.000]
-    #                 visible: true
+        forest-landcover:
+            filter: { kind: [forest, natural_forest, wood, natural_wood, natural_park], $zoom: { min: 10 }, not: { operator: "United States Forest Service" } }
+            draw:
+                polygons:
+                    style: forest-dots-multi
+                    color: [1.000,1.000,1.000]
+                    visible: true
 
         parks-and-national-forests-not-national-park:
             filter:
@@ -1634,14 +1634,14 @@ styles:
         mix: [polygons-dots-multi]
         shaders:
             defines:
-                DOTS_BACKGROUND_COLOR: vec3(0.920,0.920,0.920)
+                DOTS_BACKGROUND_COLOR: vec3(0.155,0.155,0.155)
                 DOTS_TYPE: fill
                 DOTS_TILE_STYLE: tile
                 DOTS_SCALE: 18.0
                 DOTS_SIZE: 0.25
-                DOTS_COLOR: vec3(0.905)
+                DOTS_COLOR: vec3(0.155)
                 DOTS_SIZE2: 0.8
-                DOTS_COLOR2: vec3(0.860,0.860,0.860)
+                DOTS_COLOR2: vec3(0.210,0.210,0.210)
 
     conservation-dots-multi:
         base: polygons

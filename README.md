@@ -7,6 +7,8 @@ To learn more about the visual language of cartography, I suggest the following 
 [TRON 2.0 - Creating a Visual Language of Scale](https://geraldinesarmiento.com/#/tron-creating-a-visual-language-of-scale/)<br/>
 [Unboxing Bubble Wrap](https://www.mapzen.com/blog/bubble-wrap-carto/)
 
+These maps are built with [Tangram](https://www.mapzen.com/products/tangram/). [Tangram](https://github.com/tangrams/tangram) is an open-source map renderer, originally developed at Mapzen and now a project under the Linux Foundation.
+
 View the [xyz dark dot map](https://sensescape.github.io/xyz-dots-dark/).
 
 [https://explore.xyz.here.com](https://explore.xyz.here.com)

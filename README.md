@@ -1,4 +1,4 @@
-![GRAPHIC SERIES](https://raw.githubusercontent.com/sensescape/xyz-dots/master/images/dots-title2.jpg)
+![GRAPHIC SERIES](https://raw.githubusercontent.com/sensescape/xyz-dots-dark/master/images/graphic-series-dark-dots.jpg)
 
 The GRAPHIC SERIES is a new set of maps created for data visualization. This map series is a continuation of my exploration of the visual language of cartography through the medium of drawing, with a focus on three visual elements: the **dot**, the **line** and the **pixel**.
 

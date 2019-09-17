@@ -7,7 +7,7 @@ To learn more about the visual language of cartography, I suggest the following 
 [TRON 2.0 - Creating a Visual Language of Scale](https://geraldinesarmiento.com/#/tron-creating-a-visual-language-of-scale/)<br/>
 [Unboxing Bubble Wrap](https://www.mapzen.com/blog/bubble-wrap-carto/)
 
-View the [xyz dot map](https://sensescape.github.io/xyz-dots/#12/37.7823/-122.4274).
+View the [xyz dot map](https://sensescape.github.io/xyz-dots-dark/).
 
 [https://explore.xyz.here.com](https://explore.xyz.here.com)
 
